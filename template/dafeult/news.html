@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{content:title}-{pboot:sitetitle}</title>
+<meta name="keywords" content="{content:keywords}">
+<meta name="description" content="{content:description}">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+{include file=head.html}
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:sort scode={sort:tcode}}<li><img src="[sort:pic]"></li>{/pboot:sort}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main">
+  <div class="center">
+    <div class="page_cont art_cont clearfix">
+      <div class="fl">
+        <div class="content_tit clearfix">
+          <h3>{content:title}</h3>
+          <span>发布时间 - {content:date style=Y-m-d}&nbsp;&nbsp;&nbsp;&nbsp;点击率：{content:visits}次</span> </div>
+        <div class="content ab_img">
+          {content:content}
+        </div>
+        <div class="show_pages clearfix">
+          <p>上一篇：{content:precontent}</p>
+          <p>下一篇：{content:nextcontent}</p>
+        </div>
+      </div>
+      <div class="fr">
+        <div class="hot_new clearfix"> 
+		<span>最新文章</span> 
+		{pboot:list num=40 scode={sort:scode} page=0}
+		<a href="[list:link]">[list:title]</a>
+		{/pboot:list}
+		</div>
+      </div>
+    </div>
+    <div class="m_show_pages clearfix">
+      <p>上一篇：{content:precontent}</p>
+      <p>下一篇：{content:nextcontent}</p>
+    </div>
+  </div>
+</div>
+{include file=foot.html}
+</body>
+</html>

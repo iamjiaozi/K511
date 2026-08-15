@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{pboot:if('{sort:title}'=='')}{pboot:pagetitle}{else}{sort:title}{/pboot:if}</title>
+<meta name="keywords" content="{pboot:if('{sort:keywords}'=='')}{pboot:pagekeywords}{else}{sort:keywords}{/pboot:if}">
+<meta name="description" content="{pboot:if('{sort:description}'=='')}{pboot:pagedescription}{else}{sort:description}{/pboot:if}">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+{include file=head.html}
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:sort scode={sort:tcode}}<li><img src="[sort:pic]"></li>{/pboot:sort}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main page_main">
+  <div class="center">
+    <div class="case_wrap clearfix">
+      <div class="box_tit clearfix"> <span>模板建站</span>
+        <p>CASE SHOW</p>
+      </div>
+      <div class="pro_screen clearfix" id="filter_btn">
+        <ul class="fbox clearfix">
+          <li><span>行业</span></li>
+          <li>{pboot:selectall field=ext_hangye text=全部 active='active'} </li>
+		  {pboot:select field=ext_hangye}
+          <li><a {pboot:if('[select:value]'=='[select:current]')}class="active" {/pboot:if} title="[select:value]" href="[select:link]">[select:value]</a></li>
+          {/pboot:select}
+        </ul>
+        <ul class="fbox clearfix">
+          <li><span>颜色</span></li>
+          <li>{pboot:selectall field=ext_yanse text=全部 active='active'} </li>
+          {pboot:select field=ext_yanse}
+          <li><a {pboot:if('[select:value]'=='[select:current]')}class="active" {/pboot:if} title="[select:value]" href="[select:link]">[select:value]</a></li>
+          {/pboot:select}
+        </ul>
+        <ul class="fbox clearfix">
+          <li><span>类型</span></li>
+          <li>{pboot:selectall field=ext_leixing text=全部 active='active'} </li>
+          {pboot:select field=ext_leixing}
+          <li><a {pboot:if('[select:value]'=='[select:current]')}class="active" {/pboot:if} title="[select:value]" href="[select:link]">[select:value]</a></li>
+          {/pboot:select}
+        </ul>
+      </div>
+      <div class="case_list clearfix" id="yunu_list">
+        <ul class="clearfix" id="box">
+          {pboot:list num=9 order=sorting}
+          <li>
+            <div class="n_case scroll_pic"><a href="[list:ext_lianjie]" target="_blank"><img src="[list:ico]" alt="" style="top: 0px;"></a></div>
+            <div class="text clearfix">
+              <h3>[list:title]</h3>
+            </div>
+            <div class="text2 clearfix"> <span>￥<i>[list:ext_jiage]</i></span> <a href="[list:ext_lianjie]" target="_blank" rel="nofollow">查看演示站</a> </div>
+            <div class="text3 clearfix">
+              <p></p>
+              <span><i>[list:ext_hangye]</i><i>[list:ext_yanse]</i><i>[list:ext_leixing]</i></span> </div>
+          </li>
+          {/pboot:list}
+        </ul>
+      </div>
+      {pboot:if({page:rows}>0)}
+      <div class="pagebar">
+      <div class="pagination">
+      <a class="page-item page-link hidden-sm" href="{page:index}" title="首页">首页</a>
+      {page:numbar}
+      <a class="page-item page-link" href="javascript:;" title="当前页/总页数">{page:current}/{page:count}</a>
+      <a class="page-item page-link hidden-sm" href="{page:last}" title="尾页">尾页</a>
+      </div>
+      </div>	
+      {else}
+      <div class="tac text-secondary">本分类下无任何数据！</div>
+      {/pboot:if}
+    </div>
+  </div>
+</div>
+{include file=foot.html}
+</body>
+</html>

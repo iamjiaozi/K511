@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{pboot:if('{sort:title}'=='')}{pboot:pagetitle}{else}{sort:title}{/pboot:if}</title>
+<meta name="keywords" content="{pboot:if('{sort:keywords}'=='')}{pboot:pagekeywords}{else}{sort:keywords}{/pboot:if}">
+<meta name="description" content="{pboot:if('{sort:description}'=='')}{pboot:pagedescription}{else}{sort:description}{/pboot:if}">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+{include file=head.html}
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:sort scode={sort:tcode}}<li><img src="[sort:pic]"></li>{/pboot:sort}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main">
+  <div class="wzjs_text1">
+    <div class="list clearfix">
+      <ul>
+        <li>
+          <div class="center clearfix">
+            <div class="fr"> <img src="{pboot:sitedomain}/skin/images/js1.png" /></div>
+            <div class="fl"> <span>品牌官网建设 形象网页宣传一体</span>
+              <p> 坚定信念，相信判断</p>
+              <p> 寻找适合的推广模式，平常人善于等待机遇</p>
+              <p> 智慧者该如何创造机遇？</p>
+              <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">立即体验</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="center clearfix">
+            <div class="fr"> <img src="{pboot:sitedomain}/skin/images/js2.png" /></div>
+            <div class="fl"> <span>网站改版提升竞争力</span>
+              <p> 摆脱传统网站模式，全新面貌展示</p>
+              <p> 提升用户体验，增加互动模块，SEO优化布局</p>
+              <p> 提高百度快照排名，提升市场竞争力</p>
+              <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">立即体验</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="center clearfix">
+            <div class="fr"> <img src="{pboot:sitedomain}/skin/images/js3.png" /></div>
+            <div class="fl"> <span>网站升级功能完善化</span>
+              <p> 完善功能优化布局，规范企业网站职能</p>
+              <p> 提升服务效能，网站的实用性、价值</p>
+              <p> 形象突飞猛进</p>
+              <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">立即体验</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="center clearfix">
+            <div class="fr"> <img src="{pboot:sitedomain}/skin/images/js4.png" /></div>
+            <div class="fl"> <span>工作流程</span>
+              <p> 从一个小想法开始，我们全程品质服务</p>
+              <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">立即体验</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+            $('.wzjs_text1 li:even').addClass('on');
+        </script>
+  <div class="wzjs_text2">
+    <div class="box_tit"> <span>工作流程</span>
+      <p> 从一个小想法开始，我们全程品质服务</p>
+    </div>
+    <div class="center">
+      <div class="list clearfix">
+        <ul>
+          <li> <img src="{pboot:sitedomain}/skin/images/js5.jpg" /> <span>1 需求调研</span>
+            <p> 第一步了解您到底想要什么，同时也让您知晓企线的设计和工作风格，在我们双方同意并达成协议后，我们马上开始工作。</p>
+          </li>
+          <li> <img src="{pboot:sitedomain}/skin/images/js6.jpg" /> <span>2 草图原型</span>
+            <p> 我们利用工具画出初步的原型草图，包括交互页面结构按钮等元素的摆放，生成保真的UE原型后讨论功能结构可用性。</p>
+          </li>
+          <li> <img src="{pboot:sitedomain}/skin/images/js7.jpg" /> <span>3 视觉设计</span>
+            <p> 基本成形的设计稿包括主色调、版式与交互效果示例。我们会和您讲述设计释义，保持耐心，企线会修改至您的满意。</p>
+          </li>
+          <li> <img src="{pboot:sitedomain}/skin/images/js8.jpg" /> <span>4 创意迭代</span>
+            <p> 迭代优化将使设计稿反复优化，设计师会进行必要的面对面沟通，我们会听取所有的不足和建议，最后产生最终设计定稿。</p>
+          </li>
+          <li> <img src="{pboot:sitedomain}/skin/images/js9.jpg" /> <span>5 优化体验</span>
+            <p> 定稿后您有机会要求修改。收尾工作的同时，我们会邀请一部分相关用户来审阅最终的成果，使效果更能为多数人所接纳。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wzjs_text3">
+    <div class="box_tit"> <span>我们给创业者一些优惠</span>
+      <p> 本系列只适合注册1年以内的初创公司，其他优惠敬请期待</p>
+    </div>
+    <div class="center">
+      <div class="list clearfix">
+        <ul>
+          <li>
+            <h3> <em>A</em>基础套餐</h3>
+            <span>小企业品牌基础设计</span>
+            <p> 页面设计稿：10个</p>
+            <p> 人员：普通设计师1名</p>
+            <p> 首页一版主视觉设计稿</p>
+            <p> --</p>
+            <p> --</p>
+            <p> 定稿后：1次细节修改</p>
+            <p> --</p>
+            <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">QQ询价</a></li>
+          <li class="on"> <i>热销中</i>
+            <h3> <em>B</em>经济套餐</h3>
+            <span>热销优质UI设计组合</span>
+            <p> 页面设计稿：15个</p>
+            <p> 人员：资深设计师1名</p>
+            <p> 首页两版主视觉设计稿</p>
+            <p> --</p>
+            <p> 驻场配合：1名设计师</p>
+            <p> 定稿后：2次细节修改</p>
+            <p> --</p>
+            <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">QQ询价</a></li>
+          <li>
+            <h3> <em>C</em>高级套餐</h3>
+            <span>全方位设计+程序组合</span>
+            <p> 页面设计稿：25个</p>
+            <p> 人员：设计总监1名</p>
+            <p> 首页三版主视觉设计稿</p>
+            <p> 包含程序代码工作</p>
+            <p> 驻场配合：1名设计师</p>
+            <p> 定稿后：3次细节修改</p>
+            <p> --</p>
+            <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">QQ询价</a></li>
+          <li>
+            <h3> <em>D</em>定制套餐</h3>
+            <span>全定制尊享UI设计组合</span>
+            <p> 页面设计稿：55个</p>
+            <p> 人员：设计总监1名</p>
+            <p> 首页五版主视觉设计稿</p>
+            <p> 包含程序代码工作</p>
+            <p> 驻场配合：3名设计师</p>
+            <p> 定稿后：5次细节修改</p>
+            <p> 维护期：1年免费</p>
+            <a href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="_blank">QQ询价</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{include file=foot.html}
+</body>
+</html>

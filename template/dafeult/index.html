@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{pboot:sitetitle}</title>
+<meta name="keywords" content="{pboot:sitekeywords}">
+<meta name="description" content="{pboot:sitedescription}">
+<meta name="author" content="www.adminbuy.cn K560">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+<div class="header" id="header">
+  <div class="pc_banner mtbanner">
+    <div class="pcbanner">
+      <div class="swiper-wrapper">
+        {pboot:slide gid=1 num=10}
+        <div class="swiper-slide"><img src="[slide:src]" alt="[slide:title]"></div>
+		{/pboot:slide}
+      </div>
+      <div class="banner_pagination"></div>
+      <div class="banner_prev"></div>
+      <div class="banner_next"></div>
+    </div>
+    <script>
+                var mySwiper = new Swiper('.pcbanner', {
+                    speed:500,
+                    autoplay: {
+                        delay:5000
+                    },
+                    pagination: {
+                        el: '.banner_pagination',
+                        clickable :true,
+                    },
+                    navigation: {
+                        nextEl: '.banner_next',
+                        prevEl: '.banner_prev',
+                    },
+                })
+            </script> 
+  </div>
+  <<div class="head_top clearfix" id="headtop">
+    <div class="center">
+      <div class="text clearfix">
+        <div class="logo"> <a href="{pboot:sitedomain}/"><img src="{pboot:sitelogo}"></a> </div>
+        <div class="nav">
+          <ul>
+            <li {pboot:if(0=='{sort:scode}')}class="active"{/pboot:if}><a href="{pboot:sitedomain}/">首页</a></li>
+            {pboot:nav}
+            <li {pboot:if('[nav:scode]'=='{sort:tcode}')}class="active"{/pboot:if}> <a href="[nav:link]">[nav:name]</a></li>
+            {/pboot:nav}
+          </ul>
+        </div>
+        <script type="text/javascript">
+			$(".nav li").hover(function(){
+				//$(this).toggleClass("active").siblings('.nav li').removeClass("active");//切换图标
+				$(this).children(".nav .v_list").slideToggle(150).siblings("#app_menu .v_list").slideUp(150);
+			});
+		</script>
+        <div class="tel">
+          <p> <span>{pboot:companyphone}</span> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="m_header">
+  <div class="m_head_content">
+    <div class="m_head_logo"> <a href="{pboot:sitedomain}/"><img src="{pboot:sitelogo}"></a> </div>
+    <div class="menu" id="menu"><i class="fa fa-list-ul"></i></div>
+  </div>
+  <div class="app_menu" id="app_menu">
+    <ul>
+      <li {pboot:if(0=='{sort:scode}')}class="active"{/pboot:if}><a href="{pboot:sitedomain}/"><span>首页</span></a></li>
+      {pboot:nav}
+      <li {pboot:if('[nav:scode]'=='{sort:tcode}')}class="active"{/pboot:if}> <a href="[nav:link]"><span>[nav:name]</span></a></li>
+      {/pboot:nav}
+    </ul>
+  </div>
+  <script type="text/javascript">
+            $("#menu").on('click', function (event) {
+                if($("#app_menu").css("display")=="none"){
+                    $("#app_menu").slideDown(600);
+                }else{
+                    $("#app_menu").slideUp(600);
+                }
+            }); 
+            // $("#app_menu li").eq(2).addClass('on');
+            // $("#app_menu li").eq(3).addClass('on');
+
+            $("#app_menu li").click(function(){
+                $(this).toggleClass("active").siblings('#app_menu li').removeClass("active");//切换图标
+                $(this).next("#app_menu .v_list").slideToggle(500).siblings("#app_menu .v_list").slideUp(500);
+            });
+        </script> 
+</div>
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:slide gid=2 num=10}
+      <li><img src="[slide:src]" alt="[slide:title]"></li>
+	  {/pboot:slide} 
+    </ul>
+  </div>
+  <script type="text/javascript">
+            $(function () {
+                $('#mbanner').roll({
+                    banner: true,
+                    btn: true
+                });
+            });
+        </script> 
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main index_main">
+  <div class="i_box1">
+    <div class="center">
+      <div class="box_tit"> <span>服务项目</span>
+        <p>五年的网络营销经验，1000家企业服务锤炼；专业的网络营销策划师，为您量身定制适合自己的互联网形象</p>
+      </div>
+      <div class="box clearfix">
+        <ul>
+          {pboot:sort scode=1,2,3,5}
+          <li>
+            <div class="li_text">
+              <div class="text">
+                <p class="clearfix"> <span>[sort:def1]</span> <a href="[sort:link]">详细 ></a> </p>
+                <img src="[sort:ico]">
+                <h3>[sort:name]</h3>
+              </div>
+            </div>
+          </li>
+          {/pboot:sort}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="i_box3 clearfix">
+    <div class="box_tit"> <span>一站式运营解决方案</span>
+      <p>某某网络不是只做互联网广告的公司，我们是为客户考虑如何提升引流、如何促进点击、 如何获得高质量转化的服务商，全面为您考虑网络营销的每一环节</p>
+    </div>
+    <div class="pic clearfix"> <img src="{pboot:sitedomain}/skin/images/1.jpg"> </div>
+  </div>
+  <div class="i_box2 clearfix">
+    <div class="center">
+      <div class="box_tit"> <span>选择我们的原因</span>
+        <p>定制开发 · 注重搜索 · 用心服务 · 持续为客户创造价值</p>
+      </div>
+      <div class="box clearfix" id="box2list">
+        <ul>
+          <li> <i></i> <span>定位精准</span> <span>剑走蜻蛉 不拘一格</span>
+            <div class="text">
+              <p>顾问式网站要求分析</p>
+              <p>快速洞悉企业营销需求</p>
+            </div>
+            <div class="pic"> <img src="{pboot:sitedomain}/skin/images/ic5.png" /> <img src="{pboot:sitedomain}/skin/images/hic5.png" /> </div>
+          </li>
+          <li> <i></i> <span>匠心独运</span> <span>标新立异 一蹴而就</span>
+            <div class="text">
+              <p>5年的行业项目经验</p>
+              <p>引领网站理念新目标</p>
+            </div>
+            <div class="pic"> <img src="{pboot:sitedomain}/skin/images/ic6.png" /> <img src="{pboot:sitedomain}/skin/images/hic6.png" /> </div>
+          </li>
+          <li> <i></i> <span>潜心策划</span> <span>精心布局 细致安排</span>
+            <div class="text">
+              <p>资深的网站定制方案</p>
+              <p>智慧团队 群策群力 战无不胜</p>
+            </div>
+            <div class="pic"> <img src="{pboot:sitedomain}/skin/images/ic7.png" /> <img src="{pboot:sitedomain}/skin/images/hic7.png" /> </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {pboot:sort scode=7}
+  <div class="i_box4">
+    <div class="center">
+      <div class="box_tit"> <span>[sort:name]</span>
+        <p>[sort:def1]</p>
+      </div>
+      <div class="box clearfix">
+        <ul>
+          {pboot:list scode=[sort:scode] num=10 order=sorting}
+          <li>
+            <div class="imgauto"><img src="[list:ico]" alt="[list:title]"></div>
+          </li>
+          {/pboot:list}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {/pboot:sort}
+  {pboot:sort scode=4}
+  <div class="i_box5">
+    <div class="center">
+      <div class="box_tit"> <span>[sort:name]</span>
+        <p>[sort:def1]</p>
+      </div>
+      <div class="box clearfix">
+        <ul>
+          <li>
+			{pboot:list scode=[sort:scode] num=1 order=sorting}
+            <div class="text"> <img src="[list:ico]" alt="[list:title]" width="100%"> <a href="[list:link]"><span>[list:title]</span></a> <i></i> </div>
+			{/pboot:list}
+            <div class="list">
+              {pboot:list scode=[sort:scode] num=5 order=sorting start=2}
+              <p><span>[list:date style=m-d]</span><a href="[list:link]">[list:title]</a></p>
+              {/pboot:list}
+            </div>
+          </li>
+          <li>
+          	{pboot:list scode=[sort:scode] num=1 order=sorting start=7}
+            <div class="text"> <img src="[list:ico]" alt="[list:title]" width="100%"> <a href="[list:link]"><span>[list:title]</span></a> <i></i> </div>
+          	{/pboot:list}
+            <div class="list">
+              {pboot:list scode=[sort:scode] num=5 order=sorting start=8}
+              <p><span>[list:date style=m-d]</span><a href="[list:link]">[list:title]</a></p>
+              {/pboot:list}
+            </div>
+          </li>
+		  <li>
+		  	{pboot:list scode=[sort:scode] num=1 order=sorting start=13}
+		    <div class="text"> <img src="[list:ico]" alt="[list:title]" width="100%"> <a href="[list:link]"><span>[list:title]</span></a> <i></i> </div>
+		  	{/pboot:list}
+		    <div class="list">
+		      {pboot:list scode=[sort:scode] num=5 order=sorting start=14}
+		      <p><span>[list:date style=m-d]</span><a href="[list:link]">[list:title]</a></p>
+		      {/pboot:list}
+		    </div>
+		  </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {/pboot:sort}
+</div>
+<div class="link">
+  <div class="center">
+    <div class="list clearfix">
+      <p> <span>友情链接：</span> {pboot:link gid=1 num=50}<a href='[link:link]' target='_blank'>[link:name]</a>{/pboot:link}</p>
+    </div>
+  </div>
+</div>
+<div class="link area"> </div>
+{include file=foot.html}
+</body>
+</html>

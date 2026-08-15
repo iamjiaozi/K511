@@ -1,0 +1,168 @@
+{include file='common/head.html'}
+  
+<div class="layui-body">
+	
+	{if(![$dbsecurity]||![$session.pwsecurity]||[$currenturlnotsafe])}
+	<blockquote class="layui-elem-quote layui-text-red" id="note">
+        {if(![$dbsecurity])}
+		<p>
+			<i class="fa fa-info-circle" aria-hidden="true"></i>
+			您的数据库文件存在安全隐患，可能被下载，请尽快修改数据库路径！<a class="layui-btn  layui-btn-sm" href="{url./admin/Index/home}&action=moddb">自动修改</a>
+		</p>
+		{/if}
+		{if([$currenturlnotsafe])}
+		<p>
+			<i class="fa fa-info-circle" aria-hidden="true"></i>
+			当前后台文件名为admin.php,不安全！不安全！不安全！请修改网站根目录的admin.php文件成只有自己知道的文件名。文件名修改后，后台新访问地址为：你的域名/你改的后台文件名.php
+		</p>
+		{/if}
+		
+		{if(![$session.pwsecurity])}
+		<p>
+			<i class="fa fa-info-circle" aria-hidden="true"></i>
+			 您的账号密码为初始密码，存在安全隐患，请尽快修改密码！<a class="layui-btn  layui-btn-sm" href="{url./admin/Index/ucenter}">立即修改</a>
+		</p>
+		{/if}
+    </blockquote>
+    {/if}
+    
+    <blockquote class="layui-elem-quote">
+    	当前登录用户：{$user_info->username} {$user_info->realname}，登录时间：{$user_info->update_time}，登录IP：{fun=long2ip([$user_info->last_login_ip])}，累计登录次数：{$user_info->login_count}
+    </blockquote>
+	
+	<fieldset class="layui-elem-field">
+		<legend>快捷操作</legend>
+		<div class="layui-field-box">	
+			<div class="layui-row">
+				{foreach $model_msg(key,value)}
+				<div class="layui-col-xs6 layui-col-sm4 layui-col-md3 layui-col-lg2">
+		    		{if($value->type==1)}
+		    		<a href="{url./admin/Single/index/mcode/'.$value->mcode.'}">
+		    		{else}
+		    		<a href="{url./admin/Content/index/mcode/'.$value->mcode.'}">
+		    		{/if}
+			      		<dl class="deskbox center-block">
+			      			 <dt>[value->name]</dt>
+		                     <dd>[value->count]</dd>
+		                 </dl>
+		             </a>
+		   	    </div>
+	   	    	{/foreach}
+	   	    	
+				<div class="layui-col-xs6 layui-col-sm4 layui-col-md3 layui-col-lg2">
+		    		<a href="{url./admin/Message/index}">
+			      		<dl class="deskbox center-block">
+			      			 <dt>留言</dt>
+		                     <dd>{$sum_msg}</dd>
+		                 </dl>
+		             </a>
+		   	    </div>
+	   	    </div>
+		 </div>
+	 </fieldset>
+	 
+	 <div class="layui-row layui-col-space10">
+	 	<div class="layui-col-xs12 layui-col-md6">
+			<table class="layui-table table-two">
+				  <thead>
+				  	<tr>
+				  		<th colspan="2">系统信息</th>
+				  	</tr>
+				  </thead>
+				  <tbody>
+				     <tr>
+				      	<th width="100">应用版本</th>
+				      	<td>PbootCMS V{APP_VERSION}-{RELEASE_TIME} 
+				      	 {if(session('ucode')==10001)}
+				      		<!--<a href="javascript:void(0)" onclick="Notice()" class="layui-btn layui-btn-xs" id="check">在线更新</a>--> <a class="layui-btn layui-btn-xs" href="https://www.adminbuy.cn/a/wenti/9580.html" target="_blank">安全防护（毕看）</a>
+				         {/if}
+				      	</td>
+				     </tr>
+				     <tr>
+				      	<th>主机系统</th>
+				      	<td>{$server->php_os}</td>
+				     </tr>
+				     <tr>
+				      	<th>主机地址</th>
+				      	<td>{$server->server_name}（{$server->server_addr}:{$server->server_port}）</td>
+				     </tr>
+				     <tr>
+				      	<th>WEB软件</th>
+				      	<td>{$server->server_software}</td>
+				     </tr>
+				     <tr>
+				      	<th>PHP版</th>
+				      	<td>{$server->php_version}</td>
+				     </tr>
+				     <tr>
+				      	<th>数据库驱动</th>
+				      	<td>{$server->db_driver}</td>
+				     </tr>
+				     <tr>
+				      	<th>文件上传限制</th>
+				      	<td>{$server->upload_max_filesize}</td>
+				     </tr>
+				     <tr>
+				      	<th>表单提交限制</th>
+				      	<td>{$server->post_max_size}</td>
+				     </tr>
+				  </tbody> 
+			</table> 
+	 	</div>
+	 	
+	 	<div class="layui-col-xs12 layui-col-md6">
+			<table class="layui-table table-two">
+				  <thead>
+				  	<tr>
+				  		<th colspan="2">开发信息</th>
+				  	</tr>
+				  </thead>
+				 
+				  <tbody>
+				  	<tr>
+	                    <th>系统名称</th>
+	                    <td>{CMSNAME}企业网站开发建设管理系统</td>
+	                </tr>
+	
+	                
+	                
+				  	<tr>
+	                    <th>模板下载</th>
+	                    <td>
+	                    	<a href="https://www.adminbuy.cn/" style="color:#666" target="_blank">www.adminbuy.cn</a>
+	                    </td>
+	                </tr>
+	                
+	                
+	                
+	                <tr>
+	                    <th>图标下载</th>
+	                    <td><a href="https://sc.adminbuy.cn" style="color:#666" target="_blank">sc.adminbuy.cn</a></td>
+	                </tr>
+	               
+	                <tr>
+	                    <th>js特效</th>
+	                    <td><a href="https://js.adminbuy.cn" style="color:#666" target="_blank">js.adminbuy.cn</a></td>
+	                </tr>
+                    <tr>
+	                    <th>在线工具</th>
+	                    <td><a href="https://tool.adminbuy.cn" target="_blank" style="color:#666">tool.adminbuy.cn</a></td>
+	                </tr>
+                    <tr>
+	                    <th>仿站制作</th>
+	                    <td><a href="http://fang.adminbuy.cn" target="_blank" style="color:#666">fang.adminbuy.cn</a></td>
+	                </tr>
+	                <tr>
+	                    <th>VIP赠品获取</th>
+	                    <td><a href="https://www.adminbuy.cn/work/zp.html" target="_blank" style="color:#666">点击获取</a></td>
+	                </tr>
+                    <tr>
+	                    <th>技术支持</th>
+	                    <td><a href="https://wpa.qq.com/msgrd?v=3&uin=9490489&site=qq&menu=yes" target="_blank" style="color:#666">QQ：9490489</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>微信号：wwwadminbuycn</a></td>
+	                </tr>
+				  </tbody>
+			</table>
+	 	</div>
+	 </div>
+</div>
+{include file='common/foot.html'}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{pboot:if('{sort:title}'=='')}{pboot:pagetitle}{else}{sort:title}{/pboot:if}</title>
+<meta name="keywords" content="{pboot:if('{sort:keywords}'=='')}{pboot:pagekeywords}{else}{sort:keywords}{/pboot:if}">
+<meta name="description" content="{pboot:if('{sort:description}'=='')}{pboot:pagedescription}{else}{sort:description}{/pboot:if}">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+{include file=head.html}
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:sort scode={sort:tcode}}<li><img src="[sort:pic]"></li>{/pboot:sort}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main">
+  <div class="f_box1 f_bg">
+    <div class="center">
+      <div class="ftit">
+        <h2> 三大产品创新颠覆传统SEO</h2>
+        <p> 采用2018年全新搜索引擎算法，快速上首页，就是这么简单</p>
+      </div>
+      <div class="list">
+        <div class="items">
+          <h5> 平台化全智能操作</h5>
+          <p> 后台一键添加关键词+优化链接即可<br />
+            优化工作全部后台智能完成</p>
+        </div>
+        <div class="items">
+          <h5> 排名效果可视化</h5>
+          <p> 系统每天自动查询关键词在百度排名位置<br />
+            并生成查询报表</p>
+        </div>
+        <div class="items">
+          <h5> 收费功能自动化</h5>
+          <p> 关键词任务计费全自动，后台根据关键词热度、优<br />
+            化站质量全部自动调整优化力度，确保效果</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="f_box2">
+    <div class="center">
+      <div class="ftit">
+        <h2> 他们使用排名已盈利，你还在犹豫什么?</h2>
+        <p> 快速上手，不管是兼职还是全职，工具在手效果不愁，客户多多，盈利满满！</p>
+      </div>
+      <div class="list">
+        <div class="items">
+          <h5> 个人企业站长 <small>正在使用</small></h5>
+          <p> 系统分类优化订单，网站排名效果更快，工作效率大大提升！</p>
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={pboot:companyqq}&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank">立即咨询&gt;</a></div>
+        <div class="items">
+          <h5> SEO优化公司 <small>正在使用</small></h5>
+          <p> 公司优化业务效果更明显，客户合作意向越来越高！</p>
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={pboot:companyqq}&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank">立即咨询&gt;</a></div>
+        <div class="items">
+          <h5> 网站负责人员 <small>正在使用</small></h5>
+          <p> 实时掌控网站优化效果 随时调整优化关键词！</p>
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={pboot:companyqq}&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank">立即咨询&gt;</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="f_box3 f_bg">
+    <div class="center">
+      <div class="ftit">
+        <h2> 选择我们让seo变得更简单</h2>
+        <p> 采用2018年全新搜索引擎算法，快速上首页，就是这么简单</p>
+      </div>
+      <div class="list">
+        <div class="items">
+          <div class="pic"> <img src="{pboot:sitedomain}/skin/images/s1.png" /> <img src="{pboot:sitedomain}/skin/images/s11.png" /></div>
+          <h5> 系统操作易</h5>
+          <p> 系统操作简单，只需要添加网址而和关键词的一步操作就能坐等排名效果 ! 确保您的优化任务省时、省事、省资源！</p>
+        </div>
+        <div class="items">
+          <div class="pic"> <img src="{pboot:sitedomain}/skin/images/s2.png" /> <img src="{pboot:sitedomain}/skin/images/s22.png" /></div>
+          <h5> 优化效果快</h5>
+          <p> 快速提升关键词排名，输入想要优化的关键词，最快当天就能见效！</p>
+        </div>
+        <div class="items">
+          <div class="pic"> <img src="{pboot:sitedomain}/skin/images/s3.png" /> <img src="{pboot:sitedomain}/skin/images/s33.png" /></div>
+          <h5> 排名效果好</h5>
+          <p> SEO核心优化技术能够轻松做到优化一个核心词，匹配一批关键词到首页，为网站带来更多高频流量！</p>
+        </div>
+        <div class="items">
+          <div class="pic"> <img src="{pboot:sitedomain}/skin/images/s4.png" /> <img src="{pboot:sitedomain}/skin/images/s44.png" /></div>
+          <h5> 成本费用低</h5>
+          <p> 费用远低于行业同类产品！系统坚持用较低的成本做更好的效果！</p>
+        </div>
+        <div class="items">
+          <div class="pic"> <img src="{pboot:sitedomain}/skin/images/s5.png" /> <img src="{pboot:sitedomain}/skin/images/s55.png" /></div>
+          <h5> 效果覆盖广</h5>
+          <p> 能够根据不同的搜索引擎的特征，进行针对性的排名优化，排名效果覆盖各大主流搜索引擎！</p>
+        </div>
+        <div class="items">
+          <div class="pic"> <img src="{pboot:sitedomain}/skin/images/s6.png" /> <img src="{pboot:sitedomain}/skin/images/s66.png" /></div>
+          <h5> 监控效果好</h5>
+          <p> 智能监控系统让排名效果以及费用消耗一目了然，方便用户随时随地均可查询排名效果的实时数据！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="f_box4">
+    <div class="center">
+      <div class="ftit">
+        <h2> 优秀案例赏析</h2>
+        <p> 使用众多行业法的优秀案例</p>
+      </div>
+      <div class="seo_cases clearfix">
+        <div class="seo_cases_list" id="seo_cases_list1">
+          <div class="title clearfix">
+            <p> <span>关键词</span> <span>网址</span> <span>排名</span></p>
+          </div>
+          <div class="bd">
+            <ul class="infoList">
+              <li> <span>激光切割机</span><span>www.la**.com</span><span>1</span></li>
+              <li> <span>机械加工</span><span>www.vt**.com</span><span>1</span></li>
+              <li> <span>微商</span><span>www.gf**.org</span><span>2</span></li>
+              <li> <span>小程序开发</span><span>www.wx**.com</span><span>2</span></li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+                        jQuery("#seo_cases_list1").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:50,trigger:"click"});
+                    </script>
+        <div class="seo_cases_list" id="seo_cases_list2">
+          <div class="title clearfix">
+            <p> <span>关键词</span> <span>网址</span> <span>排名</span></p>
+          </div>
+          <div class="bd">
+            <ul class="infoList">
+              <li> <span>合肥家政公司</span><span>www.ax**.com</span><span>1</span></li>
+              <li> <span>长沙装修公司</span><span>www.qs**.com</span><span>1</span></li>
+              <li> <span>矿山机械</span><span>www.yt**.com</span><span>1</span></li>
+              <li> <span>五金模具</span><span>www.ne**.com </span><span>1</span></li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+                        jQuery("#seo_cases_list2").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:50,trigger:"click"});
+                    </script>
+        <div class="seo_cases_list" id="seo_cases_list3">
+          <div class="title clearfix">
+            <p> <span>关键词</span> <span>网址</span> <span>排名</span></p>
+          </div>
+          <div class="bd">
+            <ul class="infoList">
+              <li> <span>CAD教程</span><span>www.mf**.com</span><span>4</span></li>
+              <li> <span>广州二手车</span><span>www.gj**.com</span><span>1</span></li>
+              <li> <span>扫地机</span><span>www.ch**.com</span><span>2</span></li>
+              <li> <span>会计培训</span><span>www.ac**.com</span><span>1</span></li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+                        jQuery("#seo_cases_list3").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:4,interTime:50,trigger:"click"});
+                    </script></div>
+      <a class="ot_more" href="tencent://message/?uin={pboot:companyqq}&amp;Site=www.adminbuy.cn&amp;Menu=yes" rel="nofollow" target="blank">购买产品</a></div>
+  </div>
+</div>
+{include file=foot.html}
+</body>
+</html>

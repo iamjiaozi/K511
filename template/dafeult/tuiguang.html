@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{pboot:if('{sort:title}'=='')}{pboot:pagetitle}{else}{sort:title}{/pboot:if}</title>
+<meta name="keywords" content="{pboot:if('{sort:keywords}'=='')}{pboot:pagekeywords}{else}{sort:keywords}{/pboot:if}">
+<meta name="description" content="{pboot:if('{sort:description}'=='')}{pboot:pagedescription}{else}{sort:description}{/pboot:if}">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+{include file=head.html}
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:sort scode={sort:tcode}}<li><img src="[sort:pic]"></li>{/pboot:sort}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main">
+<div class="wc_text2 wc_text_pos clearfix" id="wc_text2">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc2.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix">
+      <h3> 某某网络基于SAAS模式的关键词云推广</h3>
+      <ul>
+        <li> <span>13<i>项</i></span> <em>软件著作权</em></li>
+        <li> <span>14<i>个</i></span> <em>骨干节点机房</em></li>
+        <li> <span>1000<i>台</i></span> <em>服务器和存储</em></li>
+      </ul>
+      <p> 通过OpenStack架构建立私有云资源池，并实现高可用故障转移（HA）、资源智能调配（VDS）、自动备份（Auto-backup）、负载压力分担（NBL）等多种功能，为关键词云推广提供强大的计算能力。</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text3 wc_text_pos clearfix" id="wc_text3">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc3.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>大数据海量客户搜索词挖掘</span>
+      <p> 什么是客户搜索词？例如：买车不会搜&quot;汽车&quot;，只会搜&quot;什么牌子汽车省油&quot;、&quot;20万的汽车有哪些&quot;。通过大数据分析，利用企业提供的核心关键词，眨眼之间就可挖掘出10000个符合客户搜索习惯的关键词。</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text4">
+  <div class="center">
+    <div class="box clearfix">
+      <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc4.jpg" /></div>
+      <div class="text"> <span>AI人工智能</span>
+        <p> 海量生成推广内容</p>
+        <i>1分钟可产生10000篇高质量推广内容，信息完全基于企业独有性， 而非在其他网站抓取内容拼凑，造成驴唇不对马嘴的信息垃圾。 优质内容才能实现最快1天有排名。</i></div>
+    </div>
+  </div>
+</div>
+<div class="wc_text5 wc_text_pos clearfix" id="wc_text5">
+  <div class="box">
+    <div class="center clearfix"> <span>智能生成10个高权重企业网站</span>
+      <p> 平台基于客户信息，在10家高权重网站上智能生成PC网站和手机网站，实现多种终端全覆盖。网站没排名，一切等于零！让企业站在巨人头顶看世界，推广从此不再从0做起，最快1天排在首页。</p>
+    </div>
+  </div>
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc5.jpg" /></div>
+</div>
+<div class="wc_text6 clearfix" id="wc_text6">
+  <div class="box">
+    <div class="center clearfix"> <span>能实现10000个关键词排名在首页</span>
+      <p> 有些企业会认为不需要那么多关键词，十几个就够了。但是在搜索中，需求1种产品，不同人搜索不同词语，同一产品有N种搜索词，只有业内人去搜品类词或行业词。所以广撒网，才能提升N倍曝光机会，让更多客户找到你。</p>
+      <img src="{pboot:sitedomain}/skin/images/wc6.jpg" /></div>
+  </div>
+</div>
+<div class="wc_text7 wc_text_pos clearfix" id="wc_text7">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wcx.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>3大搜索引擎全覆盖</span>
+      <p> 关键词推广覆盖百度、360搜索、搜狗3大搜索引擎，其中包括电脑端和手机端，全网推广不留死角。</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text8 clearfix">
+  <div class="text clearfix"> <span>某某网络，帮你霸占更多曝光资源</span> <img src="{pboot:sitedomain}/skin/images/wc7.jpg" />
+    <p> 竞价排名 + 某某网络 = 完美结合，让你霸占更多推广资源</p>
+  </div>
+</div>
+<div class="wc_text9 wc_text_pos clearfix" id="wc_text9">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc8.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>不排首页不花钱</span>
+      <p> 行业内都是关键词排名前3页全收费，只是越往后越便宜。某某网络按排在首页词计费，不排首页不计费，每词每天2毛钱，按天计费更省钱，最多能省90%的费用。</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text10 wc_text_pos clearfix" id="wc_text10">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc10.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>搜索首页多条排名</span> <span>只收1条费用</span>
+      <p> 搜索一个关键词，在首页显示多条企业信息</p>
+      <p> 每条信息按一个占位，行业内都按占位数计费</p>
+      <p> 某某网络只按1个词计费，最多能省80%的费用</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text11 wc_text_pos clearfix" id="wc_text11">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc11.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>按天计费，不花冤枉钱</span> <span>每天1.9亿次排名查询</span>
+      <p class="mt40"> 不按包月、包年收费玩猫腻，每词按天计费，客户不花冤枉钱</p>
+      <p> 因排名每天有变化，某某网络重金自建亿万级日查询系统</p>
+      <p> 超过100万个动态IP多引擎24小时不间断查询</p>
+      <p> 每天23:59分扣取当天费用，让计费更精准</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text12 clearfix">
+  <div class="text clearfix"> <span>全自动服务，简单的流程</span>
+    <p> 成交后由&quot;某某网络助手&quot;接手，客户只需看排名就行了。</p>
+    <img src="{pboot:sitedomain}/skin/images/wc12.jpg" /></div>
+</div>
+<div class="wc_text13 clearfix">
+  <div class="center">
+    <div class="box clearfix">
+      <div class="text"> <span>电脑、手机实时监控</span>
+        <p> 提供电脑、手机云管理平台，让推广数据随时随地了如指掌。</p>
+      </div>
+      <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc13.jpg" /></div>
+    </div>
+  </div>
+</div>
+<div class="wc_text14 wc_text_pos clearfix" id="wc_text14">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc14.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>客户在线留言</span> <span>短信、微信都提醒</span>
+      <p> 潜在客户在线询盘留言，系统会通过短信、微信同时提醒企业联系人，让每一个商机不流失。</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text15 wc_text_pos clearfix" id="wc_text15">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc15.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>不同于传统SEO</span>
+      <p> 式网络最快3天见效，远远快于传统1-3个月出效果轻松优化超过1000个词，远远高于传统30个词以内</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text16 wc_text_pos clearfix" id="wc_text16">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc16.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>不同于黑帽SEO</span>
+      <p> 不刷点击，不做垃圾外链，不做隐藏跳转，不抓别人网站内容制造信息垃圾。防止企业网站被搜索引擎封杀</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text17 wc_text_pos clearfix" id="wc_text17">
+  <div class="pic"> <img src="{pboot:sitedomain}/skin/images/wc17.jpg" /></div>
+  <div class="box">
+    <div class="center clearfix"> <span>不同于信息推广平台</span>
+      <p> 花费几千上万开个户，每天还需辛苦发广告，没有效果会说是你发的信息不够多、不够好。某某网络只对效果负责，推广只剩喝茶看报表。</p>
+    </div>
+  </div>
+</div>
+<div class="wc_text18">
+  <div class="center">
+    <div class="box_tit"> <span>关键词推广行业对比</span></div>
+    <div class="list clearfix">
+      <ul>
+        <li class="firstli"> &nbsp;</li>
+        <li class="bgli"> 传统SEO公司</li>
+        <li class="bgli"> B2B群发平台、自助信息推广平台</li>
+        <li> 某某网络</li>
+      </ul>
+      <ul>
+        <li class="borad"> 排首页词数</li>
+        <li> 30个以内</li>
+        <li class="pt16"> 根据企业信息发布水平，<br />
+          一般数量很少</li>
+        <li> 可超过10000个</li>
+      </ul>
+      <ul>
+        <li> 上首页周期</li>
+        <li class="bgf5"> 1-3个月</li>
+        <li class="bgf5"> 1-2个月</li>
+        <li> 最快1天</li>
+      </ul>
+      <ul>
+        <li> 技术方式</li>
+        <li> 发外链、文章更新等传统方式</li>
+        <li> 企业手工发布信息</li>
+        <li class="pt16"> SAAS模式云计算+大数据分析+<br />
+          AI人工智能海量分发</li>
+      </ul>
+      <ul>
+        <li> 公司规模</li>
+        <li> 10人以内</li>
+        <li> 10-100人</li>
+        <li> 200人技术团队</li>
+      </ul>
+      <ul>
+        <li> 体验度</li>
+        <li class="pt16 bgf5"> 没有监控后台，<br />
+          无法实时掌握排名动态</li>
+        <li class="pt16 bgf5"> 需要企业手动维护和推广，<br />
+          消耗人力和财力</li>
+        <li> 保姆级服务，企业不用管，只需喝茶看排名</li>
+      </ul>
+      <ul>
+        <li> 计费方式</li>
+        <li> 按月计费</li>
+        <li> 按年计费</li>
+        <li> 按天计费</li>
+      </ul>
+      <ul>
+        <li> 费用</li>
+        <li> 每词200-1000元/月</li>
+        <li class="pt16"> 推广费+编辑工资：4-8万元/年<br />
+          3300-6600元/月</li>
+        <li> 每词2毛/天（6元/月）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+{include file=foot.html}
+</body>
+</html>

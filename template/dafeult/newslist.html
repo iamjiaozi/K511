@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc,wap">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{pboot:if('{sort:title}'=='')}{pboot:pagetitle}{else}{sort:title}{/pboot:if}</title>
+<meta name="keywords" content="{pboot:if('{sort:keywords}'=='')}{pboot:pagekeywords}{else}{sort:keywords}{/pboot:if}">
+<meta name="description" content="{pboot:if('{sort:description}'=='')}{pboot:pagedescription}{else}{sort:description}{/pboot:if}">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/swiper.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/main.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/superslide.js"></script>
+<script type="text/javascript" src="{pboot:sitedomain}/skin/js/swiper.min.js"></script>
+</head>
+<body>
+{include file=head.html}
+<div class="m_banner mtbanner">
+  <div class="mbanner" id="mbanner">
+    <ul>
+      {pboot:sort scode={sort:tcode}}<li><img src="[sort:pic]"></li>{/pboot:sort}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var navOffset=$(".main").offset().top;
+            $(window).scroll(function(){
+                var scrollPos=$(window).scrollTop();
+                if(scrollPos >navOffset){
+                    $("#headtop").addClass("fixed");
+                }else{
+                    $("#headtop").removeClass("fixed");
+                }
+            });
+        });
+    </script>
+<div class="main">
+  <div class="center">
+    <div class="page_cont clearfix">
+      <div class="fl">
+        <div class="art_list clearfix">
+          <ul>
+            {pboot:list num=6 order=sorting}
+            <li>
+              <div class="pic"> <a href="[list:link]">
+                <div class="imgauto"><img src="[list:ico]" width="100%" alt="[list:title]"></div>
+                </a> </div>
+              <div class="text"> <a href="[list:link]">[list:title]</a>
+                <p>[list:description lencn=100]</p>
+                <span><a href="[list:sortlink]" style="font-size:14px;color:#999">[list:sortname] - [list:date style=Y-m-d]</a></span> </div>
+            </li>
+            {/pboot:list}
+          </ul>
+        </div>
+        {pboot:if({page:rows}>0)}
+        <div class="pagebar">
+        <div class="pagination">
+        <a class="page-item page-link hidden-sm" href="{page:index}" title="首页">首页</a>
+        {page:numbar}
+        <a class="page-item page-link" href="javascript:;" title="当前页/总页数">{page:current}/{page:count}</a>
+        <a class="page-item page-link hidden-sm" href="{page:last}" title="尾页">尾页</a>
+        </div>
+        </div>	
+        {else}
+        <div class="tac text-secondary">本分类下无任何数据！</div>
+        {/pboot:if}
+      </div>
+      <div class="fr">
+        <div class="hot_new list_hotnew clearfix"> 
+		<span>最新文章</span> 
+		{pboot:list num=40 scode={sort:scode} page=0}
+		<a href="[list:link]">[list:title]</a>
+		{/pboot:list}
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+{include file=foot.html}
+</body>
+</html>
