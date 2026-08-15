@@ -4509,12 +4509,6 @@ body {
 
 
 
-#page_cont .fl {
-  width: 100%;
-  padding: 0 1%;
-}
-
-
 
 
 .list_hotnew {
@@ -5359,4 +5353,39 @@ body {
 .page_cont.case_list .fl {
   width: 100%;
   margin-right: 0;
+}
+
+/* 联系我们页：左右两栏水平居中对齐 */
+#page_cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#page_cont .fl {
+  width: 50%;
+  margin-right: 0;
+}
+#page_cont .fr {
+  width: 50%;
+  padding-left: 0;
+  text-align: center;
+}
+
+/* 联系我们页右侧微信二维码（图片取自后台 公司信息→微信图标） */
+#page_cont .wx_qr {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px 15px;
+  text-align: center;
+}
+#page_cont .wx_qr img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: inline-block;
+}
+#page_cont .wx_qr p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #666;
 }
