@@ -2456,6 +2456,13 @@ body {
   border-radius: 10px;
 }
 
+.i_box1 .box li .sort_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
 .i_box1 .box li .li_text {
   width: 100%;
   height: 220px;
@@ -2475,6 +2482,12 @@ body {
 }
 
 .i_box1 .box li .text p a {
+  float: right;
+  font-size: 14px;
+  color: #fff;
+}
+
+.i_box1 .box li .text p .more {
   float: right;
   font-size: 14px;
   color: #fff;
