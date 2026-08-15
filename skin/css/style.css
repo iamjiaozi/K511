@@ -5348,4 +5348,7 @@ body {
 
 .ab_img img{ max-width:100% !important; height:auto !important;display:inline-block;}
 .ab_img p span{text-wrap: inherit !important;}
+
+/* 通用隐藏工具类（方法B）：给任意需要隐藏的元素加 class="hide" 即可 */
+.hide { display: none !important; }
 .ab_img p{text-wrap: inherit !important;}

@@ -55,7 +55,8 @@
                 </a> </div>
               <div class="text"> <a href="[list:link]">[list:title]</a>
                 <p>[list:description lencn=100]</p>
-                <span><a href="[list:sortlink]" style="font-size:14px;color:#999">[list:sortname] - [list:date style=Y-m-d]</a></span> </div>
+                <span><a href="[list:sortlink]" style="font-size:14px;color:#999"
+                  class="hide">[list:sortname] - [list:date style=Y-m-d]</a></span> </div>
             </li>
             {/pboot:list}
           </ul>
@@ -74,7 +75,7 @@
         {/pboot:if}
       </div>
       <div class="fr">
-        <div class="hot_new list_hotnew clearfix"> 
+        <div class="hot_new list_hotnew clearfix hide"> 
 		<span>最新文章</span> 
 		{pboot:list num=40 scode={sort:scode} page=0}
 		<a href="[list:link]">[list:title]</a>
