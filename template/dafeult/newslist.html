@@ -44,7 +44,7 @@
     </script>
 <div class="main">
   <div class="center">
-    <div class="page_cont clearfix">
+    <div class="page_cont case_list clearfix">
       <div class="fl">
         <div class="art_list clearfix">
           <ul>
@@ -73,14 +73,6 @@
         {else}
         <div class="tac text-secondary">本分类下无任何数据！</div>
         {/pboot:if}
-      </div>
-      <div class="fr">
-        <div class="hot_new list_hotnew clearfix hide"> 
-		<span>最新文章</span> 
-		{pboot:list num=40 scode={sort:scode} page=0}
-		<a href="[list:link]">[list:title]</a>
-		{/pboot:list}
-		</div>
       </div>
     </div>
   </div>

@@ -3097,16 +3097,17 @@ body {
 }
 
 .art_list li {
-  width: 100%;
+  width: 33.333%;
   float: left;
-  padding-bottom: 54px;
-  margin-bottom: 54px;
-  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 0 12px 40px;
+  margin-bottom: 40px;
+  border-bottom: none;
 }
 
 .art_list li .pic {
-  width: 30%;
-  float: left;
+  width: 100%;
+  float: none;
 }
 
 .art_list li .pic .imgauto {
@@ -3115,9 +3116,10 @@ body {
 }
 
 .art_list li .text {
-  width: 70%;
-  float: right;
-  padding-left: 15px;
+  width: 100%;
+  float: none;
+  padding-left: 0;
+  margin-top: 15px;
 }
 
 .art_list li .text a {
@@ -3136,7 +3138,7 @@ body {
   color: #999;
   display: block;
   line-height: 28px;
-  height: 84px;
+  /* height: 84px; */
   overflow: hidden;
 }
 
@@ -4986,6 +4988,7 @@ body {
     line-height: 220%;
   }
   .art_list li {
+    width: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
@@ -5351,3 +5354,9 @@ body {
 .header .head_top .tel p i,
 .header .head_top .tel p span { color: #666; }
 .ab_img p{text-wrap: inherit !important;}
+
+/* 案例列表页(.case_list)：移除右侧栏后，主列表占满整行 */
+.page_cont.case_list .fl {
+  width: 100%;
+  margin-right: 0;
+}
