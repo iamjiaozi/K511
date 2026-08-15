@@ -2393,15 +2393,6 @@ body {
   color: #333;
 }
 
-.header .fixedtop .logo a img {
-  display: none;
-}
-.header .fixedtop .logo {
-  height: 56px;
-  margin-top: 8px;
-  background: url('../images/index.png') no-repeat top left;
-  background-size: auto 100%;
-}
 .header .fixed {
   position: fixed;
   top: 0;
@@ -2412,16 +2403,6 @@ body {
 }
 .header .fixed .nav li > a {
   color: #333;
-}
-
-.header .fixed .logo a img {
-  display: none;
-}
-.header .fixed .logo {
-  height: 56px;
-  margin-top: 8px;
-  background: url('../images/index.png') no-repeat top left;
-  background-size: auto 100%;
 }
 
 .header .fixed .tel p{
@@ -5351,4 +5332,22 @@ body {
 
 /* 通用隐藏工具类（方法B）：给任意需要隐藏的元素加 class="hide" 即可 */
 .hide { display: none !important; }
+
+/* 让默认（顶部）导航栏直接使用滚动固定后的白底样式 */
+.header .head_top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, .3);
+  z-index: 13;
+}
+.header .head_top .nav li > a { color: #333; }
+.header .head_top .tel p {
+  background: url(../images/htel.png) no-repeat left center;
+  background-size: 20px;
+}
+.header .head_top .tel p i,
+.header .head_top .tel p span { color: #666; }
 .ab_img p{text-wrap: inherit !important;}
