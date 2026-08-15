@@ -19,7 +19,7 @@ return array(
 
         //'dbname' => 'www.adminbuy.cn' // 去掉注释，启用mysql数据库，注意修改前面的连接信息及type为mysqli
 
-        'dbname' => '/data/140f1d9780ad692c92c7abf864aa0f57.db' // 去掉注释，启用Sqlite数据库，注意修改type为sqlite
+        'dbname' => '/data/pbootcms.db' // 去掉注释，启用Sqlite数据库，注意修改type为sqlite
     )
 
 );
