@@ -28,11 +28,11 @@
 			<div class="user-login-box">
 				<div class="layui-form-item">
 					<label class="user-login-icon layui-icon layui-icon-username"></label>
-					<input name="username" id="username" type="text" lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+					<input name="username" id="username" type="text" lay-verify="required" placeholder="用户名" value="admin" autocomplete="off" class="layui-input">
 				</div>
 				<div class="layui-form-item">
 					<label class="user-login-icon layui-icon layui-icon-password"></label>
-					<input name="password" id="password" type="password" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+					<input name="password" id="password" type="password" lay-verify="required" placeholder="密码" value="admin" autocomplete="off" class="layui-input">
 				</div>
 				<?php if (\core\basic\Config::get('admin_check_code')) {?>
 				<div class="layui-form-item">
@@ -75,5 +75,6 @@
 
 
 </body>
-</html><?php return array (
+</html>
+<?php return array (
 ); ?>
