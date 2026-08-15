@@ -1,2 +1,5 @@
 data/pbootcms.db
 runtime/
+static/.DS_Store
+static/upload/.DS_Store
+static/upload/image/.DS_Store
