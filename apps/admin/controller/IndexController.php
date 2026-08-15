@@ -48,9 +48,9 @@ class IndexController extends Controller
             @unlink(ROOT_PATH . session('deldb'));
             unset($_SESSION['deldb']);
         }
-		//判断当前后台管理地址是否为admin.php
-		$currentaccessurl = $_SERVER['REQUEST_URI'];
-		if (strpos($currentaccessurl, 'admin.php') !== false) {  
+		//判断当前后台管理地址是否为默认的 admin.php（精确比对入口文件名，避免 hbgz_admin.php 这类包含 admin.php 子串的名称误报）
+		$currentscript = basename($_SERVER['SCRIPT_NAME'] ?? '');
+		if ($currentscript === 'admin.php') {  
 				$currenturlnotsafe = true;  
 			} else {  
 				$currenturlnotsafe = false;  
