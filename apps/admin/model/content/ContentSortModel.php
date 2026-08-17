@@ -138,7 +138,29 @@ class ContentSortModel extends Model
     // 获取最后一个code
     public function getLastCode()
     {
-        return parent::table('ay_content_sort')->order('id DESC')->value('scode');
+        // 不能用 id DESC 取，因为手工调整过 id 或删除栏目后，
+        // id 最大的记录的 scode 不一定最大，用作自动编码基准会与已存在的 scode 冲突。
+        // 这里按 scode 自身的数值/字典序取最大值，跨数据库安全。
+        $rows = parent::table('ay_content_sort')->field('scode')->select();
+        $max = null;
+        foreach ($rows as $r) {
+            $s = (string) $r->scode;
+            if ($s === '') {
+                continue;
+            }
+            if ($max === null) {
+                $max = $s;
+                continue;
+            }
+            if (is_numeric($s) && is_numeric($max)) {
+                if ((float) $s > (float) $max) {
+                    $max = $s;
+                }
+            } elseif (strcmp($s, $max) > 0) {
+                $max = $s;
+            }
+        }
+        return $max;
     }
 
     // 添加内容栏目
